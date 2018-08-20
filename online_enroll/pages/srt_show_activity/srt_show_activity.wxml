@@ -1,0 +1,171 @@
+<!--pages/srt_show_activity/srt_show_activity.wxml-->
+<!--模态层  -->
+<view class='container'>
+      <view class="covear" bindtap='quit_cover' style='display:{{isShowaa}}'>
+          <button  class="cover_itema"  bindgetuserinfo="bindGetUserInfo"  open-type="getUserInfo">授权登录</button> 
+      </view>
+
+
+
+  <image class="{{is_top_img?'top_img':'hide'}}" src="{{top_img}}" style='width:100%;' mode='widthFix'></image>
+  <view class="{{is_top_img?'up_title':'hide'}}">项目简介</view>
+  <view class="content">       
+            <view class="title_box">
+            <view class="state">
+                    <view class="image_in" style="background-color:{{info_array.color}}">{{info_array.word}}</view>
+            </view>
+              <view class="name">{{info_array['name']}}</view>
+              <view class="{{isAttention?'already_attention':'add_attention'}}" bindtap='attention'>{{isAttention?'取消关注':'关注'}}</view>
+          </view>
+
+          <view class="type">足球亲子活动</view>
+
+          <view class="address_box" bindtap='location'>
+              <view class="icon icon_address"></view>
+              <view class="address">{{info_array['address']}}</view>
+          </view>
+
+          <view class="enroll_time_box">
+              <view class="icon icon_enroll_time"></view>
+              <view class="tab">报名时间</view>
+              <view class="enroll_time">{{info_array['enroll_begin']}}至{{info_array['enroll_finish']}}</view>
+          </view>
+
+          <view class="avtivity_time_box">
+              <view class="icon icon_avtivity_time"></view>
+              <view class="tab">活动时间</view>
+              <view class="avtivity_time">{{info_array['activity_begin']}}至{{info_array['activity_finish']}}</view>
+          </view>
+
+          <view class="data">
+              <view class="attention">
+                  <view class="data_tab" bindtap='attention'>关注</view>
+                  <view class="num">{{info_array['attention']}}人</view>
+              </view>
+              <!-- <view class="read">
+                  <view class="data_tab">阅读</view>
+                  <view class="num">{{info_array['read']}}人</view>
+              </view> -->
+              <view class="max_enroll" style="display:{{info_array['enroll_num']==0?'none':''}}">
+                  <view class="data_max_enroll">最多报名</view>
+                  <view class="num_max_enroll">{{info_array['enroll_num']}}人</view>
+              </view>
+
+              <view class="max_enroll" style="display:{{info_array['enroll_num']==0?'':'none'}}">
+                  <view class="data_max_enroll">不限人数</view>
+              </view>
+          </view>
+
+          <!-- <view class="come_from">
+              <view class="come_from_tab">来自:</view>
+              <view class="come_from_right">正在足球俱乐部</view>
+          </view> -->
+      </view>
+          <view class="cut"></view>
+          <view class="discribtion">
+            <view class="discribtion_tab">详细介绍</view>
+            <view class="discribtion_content">{{info_array['discribtion']}}</view>
+            <block wx:for="{{info_array['other_img']}}">
+              <image class="{{is_top_img?'top_img':'hide'}}" src="{{item.web_address}}" style='width:100%;' mode='widthFix'></image>
+            </block>
+          </view>
+          <view class="cut"></view>
+
+
+      
+
+
+          <view class="enroll_table" bindtap="{{can_check?'check_enroll_excel':''}}">
+              <view class="enroll_table_tab">报名名单</view>
+              <view class="enroll_num">{{info_array['have_enroll_num']}}</view>
+              <view class="word">人已报名</view>
+              <view class="link">></view>
+          </view>
+
+          <view class="comments">
+              <view class="comments_tab" >评论</view>
+              <view class="comments_num">{{comments_num}}</view>
+              <view class="add_comment" bindtap='comment'>发表评论</view>
+          </view>
+
+          <block wx:for="{{comments}}">
+            <view class="comments_box"  style="height:{{item.box_height}}">
+              <view class="comments_avatar">
+                <image class='image_in' src="{{item.avatar}}"></image>
+              </view>
+              <view class="comments_right" style="height:{{item.box_height}}">           
+                <view class="identity_info">
+                  <view class="comments_name">{{item.name}}</view>
+                  <view class="special_identity" style='display:{{item.identify=="normal"?"none":""}}'>({{item.identify}})</view>              
+                </view>
+                <view class="comments_content" style="height:{{item.height }}">{{item.content}}</view>
+                <view class="comments_time">{{item.add_time}}</view>
+                <view class="delete_comment" bindtap='delete_comment'>删除</view>
+              </view>
+            </view>
+          </block>
+          
+
+          <view class="no_more_data">———— 没有更多数据了 ————</view>
+      
+
+      <view class="bottom">
+        <view class="bottom_item" bindtap='use_share' style="width:{{is_enroll==true?'20%':''}}">分享</view>
+        <view class="bottom_item" bindtap='sign_in'  style=""  style="display:{{is_use_sign==true?'':'none'}};width:{{is_enroll==true?'20%':''}}">{{is_sign==true?'取消签到':'签到'}}</view>
+        <view class="bottom_item" bindtap='manage' style="width:{{is_enroll==true?'20%':''}}">管理</view>
+        <view class="bottom_item" bindtap="{{is_enroll==true?'modify':'enroll'}}" style="width:{{is_enroll==true?'39%':''}}">{{is_enroll==true?'修改/取消报名':'我要报名'}}</view>
+      </view>
+
+        <!--模态层  -->
+        <view class="cover" bindtap='quit_cover' style='display:{{isShow}}'></view>
+        <view class="cover_item_box" style='display:{{isShow}}'>
+              <view class="cover_item" bindtap='modify_activity'>修改活动</view>
+              <view class="cover_item" bindtap='delete_activity'>删除活动</view>
+        </view>
+
+
+         <!--模态层  -->
+        <view class="cover" bindtap='quit_cover_share' style='display:{{isShareShow}}'></view>
+        <view class="cover_item_box" style='display:{{isShareShow}}'>
+              <button class="cover_item" open-type="share" bindtap='share'>转发</button>
+              <view class="cover_item" bindtap='produce_normal_code'>生成普通二维码</view>
+              <view class="cover_item" bindtap='produce_info_code'>生成带有活动信息二维码</view>
+        </view>
+
+
+         <!-- 二维码显示 -->
+        <view class="show_img"  style="display:{{is_show_img==true?'':'none'}}" bindtap='quit_show' bindlongtap='show_save_btn'>
+            <image class="img_code"  src='{{img_src}}' style='width:100%;' mode='aspectFit' ></image>
+            <view class="save_button" bindtap='save_img' style="display:{{is_show_save_btn}}">保存图片</view>
+        </view>
+        
+
+
+
+         <!-- 带有活动信息二维码显示 -->
+        <view class="show_img"  style="display:{{is_show_info_code==true?'':'none'}}" bindtap='quit_show_info_code'>
+            <canvas canvas-id="info_code" style='width:100%;height:750rpx;margin-top: 220rpx;'>
+              <view class="info_code_bkg" bindlongtap='show_save_info_btn'>
+                <view class="info_code_title">{{info_array['name']}}</view>
+                <view class="info_code_content">
+                  <image class="img_info_code"  src='{{img_src}}' mode='aspectFit' ></image>
+                  <view class='code_info_time'>活动开始时间：{{info_array['activity_begin']}}</view>
+                  <view class='code_info_time'>活动结束时间：{{info_array['activity_finish']}}</view>
+                  <view class='code_info_time'>报名截止时间：{{info_array['enroll_finish']}}</view>
+                </view>
+                <view class="info_code_bottom">长按识别小程序二维码报名</view>
+              </view>
+            </canvas>
+
+            <!--模态层  -->
+            <view style='display:{{isSharePicShow}}'>
+                <view class="cover_pic" bindtap='quit_cover_share_pic' ></view>
+                  <canvas  class="canvas_pic" canvas-id="info" style='width:100%;height:750rpx;'></canvas>   
+                 <!-- <canvas  class="canvas_pic" canvas-id="info" style='width:100%;height:640rpx;'></canvas>   -->
+            </view>
+            
+             
+        </view>
+         <view class="save_button" bindtap='save_info_img' style="display:{{is_show_save_info_btn}}">保存图片</view> 
+</view>
+

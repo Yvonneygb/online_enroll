@@ -1,0 +1,9 @@
+<!--pages/hand_writing/hand_writing.wxml-->
+<!-- <view class="writing_area"></view> -->
+<canvas class="writing_area" id="canvas" canvas-id="canvas" disable-scroll="true" bindtouchstart="canvasStart" bindtouchmove="canvasMove" bindtouchend="canvasEnd" touchcancel="canvasEnd" binderror="canvasIdErrorCallback"></canvas>
+
+<view class="bottom">
+  <view class="left">请在上方空白处书写</view>
+  <view class="button clear" bindtap="cleardraw">清空</view>
+  <view class="button save" bindtap="getimg_and_jump">保存</view>
+</view>

@@ -1,0 +1,57 @@
+<!--模态层  -->
+      <view class="cover" bindtap='quit_cover' style='display:{{isShow}}'>
+          <button  class="cover_item"  bindgetuserinfo="bindGetUserInfo"  open-type="getUserInfo">授权登录</button> 
+      </view>
+      
+             
+    <!-- 固定部分 -->
+    <view class="fix_box">
+        <view class="adv"></view>
+
+        <view class="navigation_bar_main">
+            <view class="item" bindtap="render_join"  open-type="getUserInfo">
+              <view>我参加的</view>
+              <view class="{{is_join_choose==true?'choose':'hide'}}"></view>
+            </view>        
+            <view class="item" bindtap="render_attention">
+              <view>我关注的</view>
+              <view class="{{is_attention_choose==true?'choose':'hide'}}"></view>
+            </view>
+            <view class="item" bindtap="render_organize">
+              <view>我发起的</view>
+              <view class="{{is_organize_choose==true?'choose':'hide'}}"></view>
+            </view>
+            <view class="item" bindtap="render_manage">
+              <view>我管理的</view>
+              <view class="{{is_manage_choose==true?'choose':'hide'}}"></view>
+            </view>
+        </view>
+
+    </view>
+    
+    
+    <scroll-view scroll-y class="activity">
+        <view class="activity_item" wx:for="{{activity_info_all}}" data-id='{{item.id}}' data-current='{{index}}' bindtap='show_detail'>
+            <view class="line_one">
+                <view class="state">
+                  <view class="image_in" style="background-color:{{item.color}}">{{item.word}}</view>
+                </view>
+                <view class="name">{{item.name}}</view>
+            </view>
+            <view class="line_two">
+                <view class="tab">报名截止：</view>
+                <view class="date">{{item.enroll_finish}}</view>
+                <view class="tab enroll_num">报名人数:</view>
+                <view class="enroll_already">{{item.have_enroll_num}}</view>
+                <view class="diagonal">/</view>
+                <view class="enroll_need">{{item.enroll_num}}</view>
+            </view>
+        </view>
+    </scroll-view>
+
+    <view class="organize_activity" bindtap='organize_activity'>
+        发起活动
+    </view>
+    <button class="organize_activity" style='display:{{is_authSetting}}'  bindgetuserinfo="bindGetUserInfo"  open-type="getUserInfo">
+        授权登录
+    </button>

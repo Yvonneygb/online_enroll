@@ -1,0 +1,6 @@
+<!--pages/add_comment/add_comment.wxml-->
+
+<view class="tab" style="display:{{isShow}}" >请输入内容</view>
+<textarea bindinput="bindinput"></textarea>
+
+ <button class="add" bindtap='publish'>发表</button>

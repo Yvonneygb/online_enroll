@@ -1,0 +1,136 @@
+<!--pages/enroll_form/enroll_form.wxml-->
+<view class="container">
+  <!-- <view class="has_enroll">每个微信号可报名一次，您已报名0次</view> -->
+  <form bindsubmit="formSubmit">
+
+     <!-- 定位模板 -->
+      <template name="address">
+        <view class="{{item['propery']=='required'?'required':'hide'}}">*</view>
+        <view class="tab tab_address">活动地址</view>
+        <input class="input_address" name="{{item['ch_discribtion']}}" data-current="{{index}}" placeholder="请输入活动举办地址"  value="{{item['value']}}"  bindinput="bindKeyInput"></input>
+        <view class="tip" style="display:{{item['show']}}">此项必填</view>
+        <!-- <view class="location">
+            <a>定位</a>
+        </view> -->
+      </template>
+
+      <!--手写签名模板  -->
+      <template name="hand_wrting">
+        <view class="{{item['propery']=='required'?'required':'hide'}}">*</view>
+        <view class="tab tab_top_img">手写签名</view>
+        <view class="show_img" style="height:{{item['view_height']}}rpx;" id="preview_other_img" capture-bind:touchstart="change_height_top" bindtap='delete_change_height_top'>
+            <image mode='scaleToFill' style="width:{{item['flag']==0?'19.5%':''}}" data-current="{{index}}" class="{{item['flag']==0?'add':'preview_in'}}" src="{{item['flag']==0?'https://mirror.playingfootball.com.cn/uploadfiles/lms/68/201704/add.png':item['value']}}" capture-bind:touchstart="add_top_img"></image>
+            <view class="{{item['flag']==0?'hide':'delete'}}" data-current="{{index}}" bindtap='delete_preview_top'>删除</view>
+        </view>
+        <input class="input_top_img" name="hand_writing" value='tempFilePaths'></input>
+        <view class="tip" style="display:{{item['show']}}">此项必填</view>
+      </template>
+
+      <!--单行输入框模板  -->
+      <template name="single_line_input">
+        <view class="{{item['propery']=='required'?'required':'hide'}}">*</view>
+        <view class="tab">{{item['ch_discribtion']}}</view>
+        <input name="{{item['ch_discribtion']}}" data-current="{{index}}" value="{{item['value']}}" class="input_name" bindinput="bindKeyInput"></input>
+        <view class="tip" style="display:{{item['show']}}">此项必填</view>
+      </template>
+
+      <!--多行输入框模板  -->
+      <template name="multiline_input">
+        <view class="{{item['propery']=='required'?'required':'hide'}}">*</view>
+        <view class="tab">{{item['ch_discribtion']}}</view>
+        <textarea  name="{{item['ch_discribtion']}}" data-current="{{index}}" value="{{item['value']}}"  bindinput="bindKeyInput"/>
+        <view class="tip" style="display:{{item['show']}}">此项必填</view>
+      </template>
+
+
+      <!--省市区模板  -->
+      <template name="province">
+        <view class="{{item['propery']=='required'?'required':'hide'}}">*</view>
+        <view class="tab">{{item['ch_discribtion']}}</view>
+        <picker id="date" mode="region" data-current="{{index}}" value="{{item['value']}}" start="1960-01-01" end="2100-09-01" bindchange="bindProvinceChange">
+           <input name="{{item['ch_discribtion']}}"  value="{{item['value']}}" class="input_name" bindinput="bindKeyInput"></input>
+         </picker>
+         <view class="tip" style="display:{{item['show']}}">此项必填</view>
+      </template>
+
+
+       <!--日期模板  -->
+      <template name="date">
+        <view class="{{item['propery']=='required'?'required':'hide'}}">*</view>
+        <view class="tab">{{item['ch_discribtion']}}</view>
+        <picker id="date" mode="date" data-current="{{index}}" value="{{item['value']}}" start="1960-01-01" end="2100-09-01" bindchange="bindDateChange">
+           <input name="{{item['ch_discribtion']}}"  value="{{item['value']}}" class="input_name" bindinput="bindKeyInput"></input>
+         </picker>
+         <view class="tip" style="display:{{item['show']}}">此项必填</view>
+      </template>
+
+      <!--时间模板  -->
+      <template name="time">
+        <view class="{{item['propery']=='required'?'required':'hide'}}">*</view>
+        <view class="tab">{{item['ch_discribtion']}}</view>
+        <picker id="time" mode="time" data-current="{{index}}" value="{{item['value']}}" start="00:00" end="23:59"  bindchange="bindTimeChange">
+           <input name="{{item['ch_discribtion']}}" data-current="{{index}}" value="{{item['value']}}" class="input_name" bindinput="bindKeyInput"></input>
+         </picker>
+         <view class="tip" style="display:{{item['show']}}">此项必填</view>
+      </template>
+
+       <!--单选模板  -->
+      <template name="single_selection">
+        <view class="{{item['propery']=='required'?'required':'hide'}}">*</view>
+        <view class="tab">{{item['ch_discribtion']}}</view>
+        <picker mode="selector" data-name="{{item['ch_discribtion']}}" value="{{index}}" data-current="{{index}}" range="{{item['option']}}" bindchange="bindChange">
+           <input name="{{item['ch_discribtion']}}" data-name="{{item['ch_discribtion']}}" value="{{item['value']}}" class="input_name" bindinput="bindKeyInput"></input>
+         </picker>
+         <view class="tip" style="display:{{item['show']}}">此项必填</view>
+      </template>
+
+      <!--多选模板  -->
+      <template name="checkbox">
+        <view class="{{item['propery']=='required'?'required':'hide'}}">*</view>
+        <view class="tab">{{item['ch_discribtion']}}</view>
+        <checkbox-group bindchange="listenCheckboxChange" data-current="{{index}}"  data-name="{{item['ch_discribtion']}}">
+           <label style="display: flex;" wx:for="{{item['option']}}" wx:for-item="items"> 
+              <checkbox value="{{items['option']}}" checked="{{items['checked']}}"/>{{items['option']}}
+           </label> 
+        </checkbox-group>
+        <view class="tip" style="display:{{item['show']}}">此项必填</view>
+      </template>
+
+      <!--上传照片模板  -->
+       <template name="image">
+        <view class="{{item['propery']=='required'?'required':'hide'}}">*</view>
+        <view class="tab">{{item['ch_discribtion']}}</view>
+        <view class="show_img" style="height:{{item['view_height']}}rpx;" id="preview_other_img">
+          <image mode='scaleToFill'  class="{{item['flag']==0?'add':'preview_in'}}"  data-current="{{index}}" src="{{item['flag']==0?'https://mirror.playingfootball.com.cn/uploadfiles/lms/68/201704/add.png':item['value'][0]}}" capture-bind:touchstart="add_other_img"></image>
+          <view class="{{item['flag']==0?'hide':'delete'}}" data-current="{{index}}" bindtap='delete_preview_other'>删除</view>
+      </view>
+        <input class="input_top_img" value="{{tempFilePaths}}"></input> 
+        <view class="tip" style="display:{{item['show']}}">此项必填</view>
+      </template> 
+
+
+      
+    
+
+    <block wx:for="{{enroll_need}}" wx:for-index="index">
+      <template wx:if="{{item['type']=='address'}}" is="address" data="{{item , flag_data,index}}"/>
+      <template wx:if="{{item['type']=='hand_writing'}}" is="hand_wrting" data="{{item,flag_top,height_top,src,index}}"/>
+      <template wx:if="{{item['type']=='single_line_input'}}"  is="single_line_input" data="{{item,flag_data,index}}"/>  
+      <template wx:if="{{item['type']=='date'}}"  is="date" data="{{item,flag_data , date , index}}"/> 
+      <template wx:if="{{item['type']=='single_selection'}}"  is="single_selection" data="{{item,flag_data,index}}"/>            
+      <template wx:if="{{item['type']=='checkbox'}}"  is="checkbox" data="{{item,flag_data,index}}"/>
+      <template wx:if="{{item['type']=='image'}}"  is="image" data="{{item,flag_data,flag_img,tempFilePaths,height_other,index}}"/>       
+       <template wx:if="{{item['type']=='multiline_input'}}"  is="multiline_input" data="{{item,flag_data,index}}"/>     
+      <template wx:if="{{item['type']=='time'}}"  is="time" data="{{item,flag_data,time , index}}"/> 
+      <template wx:if="{{item['type']=='province'}}"  is="province" data="{{item,flag_data,time , index}}"/>    
+    </block>
+      <view class="submit_box" style="display:{{action=='add'?'':'none'}}"> 
+          <button  class="publish" bindtap='save_data' form-type="submit">提交</button>
+      </view>
+
+       <view class="submit_box" style="display:{{action=='modify'?'':'none'}}"> 
+          <view class="bottom_item" bindtap='quit'>取消报名</view>
+          <view class="bottom_item" bindtap='modify'>修改报名</view>
+      </view>
+  </form>
+</view>

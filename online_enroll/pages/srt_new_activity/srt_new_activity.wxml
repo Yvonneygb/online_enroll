@@ -1,0 +1,163 @@
+<!--index.wxml-->
+
+<view class="container">
+  <form bindsubmit="formSubmit">
+      <view class="tab tab_title">活动标题</view>
+      <input name="name" data-current='0' placeholder="对活动的简短说明" class="input_title" bindinput="get_input" value="{{new_activity_form[0]['value']}}"></input>
+
+      <view class="tab tab_address">活动地址</view>
+      <input name="address" data-current='1' placeholder="请输入活动举办地址" class="input_address" bindinput="get_input" value="{{new_activity_form[1]['value']}}"></input>
+       <view class="location" bindtap='get_address'>
+          定位
+        </view> 
+
+      <view class="tab tab_time">活动开始时间-结束时间</view>
+      <view class="box">
+          <!--活动开始日期  -->
+          <picker id="begin_day" data-current='2' mode="date" name="begin_day" value="{{new_activity_form[2]['value']}}" start="{{date_now}}" end="2100-09-01" bindchange="bind_change">
+              <view class="picker">
+                {{new_activity_form[2]['value']}}
+              </view>
+            </picker>
+          <!--活动开始时间  -->
+          <picker id="begin_time" data-current='3' mode="time"  name="begin_time" value="{{new_activity_form[3]['value']}}" start="00:00"  end="23:59" bindchange="bind_change">
+              <view class="picker">
+                {{new_activity_form[3]['value']}}
+              </view>
+            </picker>
+          <view class="to">-</view>
+          <!-- 活动结束日期 -->
+          <picker id="finish_day" data-current='4' mode="date" name="finish_day" value="{{new_activity_form[4]['value']}}" start="{{date_now}}"  end="2100-09-01" bindchange="bind_change">
+              <view class="picker">
+                {{new_activity_form[4]['value']}}
+              </view>
+            </picker>
+            <!--活动结束时间  -->
+            <picker id="finish_time" data-current='5' mode="time" name="finish_time" value="{{new_activity_form[5]['value']}}" start="00:00" end="23:59" bindchange="bind_change">
+              <view class="picker">
+                {{new_activity_form[5]['value']}}
+              </view>
+            </picker>
+      </view>
+      
+
+      <view class="tab tab_enroll_time">报名开始时间-结束时间</view>
+      <view class="box">
+            <!--报名开始日期  -->
+            <picker id="enroll_day" data-current='6' mode="date" name="enroll_day" value="{{new_activity_form[6]['value']}}" start="{{date_now}}"  end="2100-09-01" bindchange="bind_change">
+              <view class="picker">
+                {{new_activity_form[6]['value']}}
+              </view>
+            </picker>
+          <!-- 报名开始时间 -->
+          <picker id="enroll_time" data-current='7' mode="time" name="enroll_time" value="{{new_activity_form[7]['value']}}" start="00:00" end="23:59" bindchange="bind_change">
+              <view class="picker">
+                {{new_activity_form[7]['value']}}
+              </view>
+            </picker>
+          <view class="to">-</view>
+          <!--报名结束日期  -->
+          <picker id="enroll_finish_day" data-current='8' mode="date" name="enroll_finish_day" value="{{new_activity_form[8]['value']}}" start="{{date_now}}" end="2100-09-01" bindchange="bind_change">
+              <view class="picker">
+                {{new_activity_form[8]['value']}}
+              </view>
+            </picker>
+          <!-- 报名结束时间 -->
+          <picker id="enroll_finish_time" data-current='9' mode="time" name="enroll_finish_time" value="{{new_activity_form[9]['value']}}" start="00:00" end="23:59" bindchange="bind_change">
+              <view class="picker">
+                {{new_activity_form[9]['value']}}
+              </view>
+            </picker>
+      </view>
+
+      <view class="tab tab_instruction">活动说明</view>
+      <input name="discribtion" data-current='10' placeholder="请输入活动介绍等" class="input_instruction" bindinput='get_input' value="{{new_activity_form[10]['value']}}"></input>
+
+      <view class="tab tab_top_img">顶部横幅照片(选填，建议尺寸960*360)</view>
+      <view class="show_img" style='height:{{height_top}}rpx;' id="preview_other_img" capture-bind:touchstart="change_height_top" bindtap='delete_change_height_top'>
+          <image mode='scaleToFill' data-current='11' style="width:{{flag_top==0?'19.5%':''}}" class="{{flag_top==0?'add':'preview_in'}}" src="{{flag_top==0?'https://mirror.playingfootball.com.cn/uploadfiles/lms/68/201704/add.png':new_activity_form[11]['value']}}" capture-bind:touchstart="add_top_img"></image>
+          <view class="{{flag_top==0?'hide':'delete'}}" bindtap='delete_preview_top'>删除</view>
+      </view>
+        <input class="input_top_img" name="top_img" value="{{new_activity_form[11]['value']}}"></input>  
+
+      <view class="tab tab_top_img">相关照片(选填)</view>
+      <view class="show_img" style='height:{{height_other}}rpx;' id="pr eview_other_img" capture-bind:touchstart="change_height_other" bindtap='delete_change_height_other'>
+          <image data-current='12' mode='scaleToFill' style="width:{{flag_other==0?'19.5%':''}}" class="{{flag_other==0?'add':'preview_in'}}" src="{{flag_other==0?'https://mirror.playingfootball.com.cn/uploadfiles/lms/68/201704/add.png':new_activity_form[12]['value']}}" capture-bind:touchstart="add_other_img"></image>
+          <view class="{{flag_other==0?'hide':'delete'}}" bindtap='delete_preview_other'>删除</view>
+      </view>
+        <input class="input_top_img" value="{{new_activity_form[12]['value']}}" name="other_img"></input>   
+
+      <view class="tab">高级设置</view>
+      <!-- <view class="advanced_config">
+          <view class="advanced_config_left">一个微信号可报名次数</view>
+          <input  class="allow_enroll" data-current='13' name="allow_enroll" bindinput='get_input' value="{{new_activity_form[13]['value']}}"></input>
+          <view class="advanced_config_right">次</view>
+      </view> -->
+
+    
+
+      <view class="advanced_config">
+           <view class="advanced_config_left">报名人数上限</view>
+          <input  class="allow_enroll" data-current='14' name="enroll_limit" placeholder='不限制请填0' bindinput='get_input' value="{{new_activity_form[14]['value']}}"></input>
+          <view class="advanced_config_right">人</view>
+      </view>
+
+      <!-- <view class="advanced_config">
+          <view class="switsh_line_left">超过人数上限后是否允许排队</view>
+          <view class="body-view">
+              <switch class="switch" data-current='15' name="over_allow_line"  checked="{{new_activity_form[15]['value']}}" color="#4391f8" bindchange="bind_switch"/>
+          </view>
+      </view> -->
+
+      <view class="advanced_config">
+          <view class="switsh_line_left">只有发起者和管理员可以分享活动</view>
+          <view class="body-view">
+              <switch class="switch" data-current='16' name="share_limit"  color="#4391f8" checked="{{new_activity_form[16]['value']}}" bindchange="bind_switch"/>
+          </view>
+      </view>
+
+      <view class="advanced_config">
+          <view class="switsh_line_left">报名用户可以查看报名名单</view>
+          <view class="body-view">
+              <switch class="switch" data-current='17' name="check_limit_yes"  color="#4391f8" checked="{{new_activity_form[17]['value']}}" bindchange="bind_switch"/>
+          </view>
+      </view>
+
+      <view class="advanced_config">
+          <view class="switsh_line_left">未报名也可看报名名单</view>
+          <view class="body-view">
+              <switch class="switch" data-current='18' name="check_limit_no"  color="#4391f8" checked="{{new_activity_form[18]['value']}}" bindchange="bind_switch"/>
+          </view>
+      </view>
+
+      <view class="advanced_config">
+          <view class="switsh_line_left">使用签到功能</view>
+          <view class="body-view">
+              <switch class="switch"  data-current='19' name="use_sign_in"  color="#4391f8" checked="{{new_activity_form[19]['value']}}" bindchange="bind_switch"/>
+          </view>
+      </view>
+<!-- 
+      <view class="tab tab_choose_item" style=''>已选项目</view>
+      <textarea name="choose_item"  class="input_choose_item" value='{{have_choose_enroll_item_string}}'></textarea> -->
+
+      <view class="tab">报名需要填写的项目（点击选取）</view>
+      <view class="enroll_box"  bindtap='change_height'>
+            <block wx:for="{{enroll_item}}" wx:for-index="index" >
+              <view class="enroll_item" style="background-color:{{item['checked']==true?'#028cf2':''}};color:{{item['checked']==true?'#fff':''}};" data-item="{{item['ch_discribtion']}}"  data-type="{{item['propery']}}" data-current="{{index}}" bindtap='show_modal'>{{item['ch_discribtion']}}</view>
+               <input class="hide" name="enroll_item_{{index}}"  value="{{item['ch_discribtion']}} {{item[2]}} {{item[3]}}"></input>        
+            </block>
+             <view class="enroll_item add_enroll_item" bindtap='add_diy'>添加自定义</view> 
+      </view>
+      <view class="tab">关注公众号“正在足球”，了解使用技巧和新功能</view>
+      <button class="publish" form-type="submit">{{action_word}}</button>
+  </form>
+
+    <!--模态层  -->
+      <view class="cover" bindtap='quit_cover' style='display:{{isShow}}'></view>
+      <view class="cover_item_box" style='display:{{isShow}}'>
+            <view class="cover_item" bindtap='set_require'>作为必填项</view>
+            <view class="cover_item" bindtap='set_choose'>作为选填项</view>
+            <view class="cover_item" bindtap='quit_choose'>取消选中</view>
+      </view>
+</view>
+

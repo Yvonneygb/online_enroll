@@ -1,0 +1,236 @@
+/* pages/enroll_form/enroll_form.wxss */
+.container{
+  font-size: 14px;
+}
+
+.has_enroll{
+  width: 100%;
+  height: 82rpx;
+  line-height: 82rpx;
+  background-color: #ffffbf;
+  color: #be9761;
+  padding-left: 5%;
+}
+
+.required{
+  float: left;
+  width: 4%;
+  height: 68rpx;
+	line-height: 68rpx;
+  color: #ff0000;
+  padding-left: 3.75%; 
+}
+
+.tip{
+  width: 100%;
+  height: 45rpx;
+  line-height: 45rpx;
+  color: red;
+  font-size: 14px;
+  padding-left: 3%;
+  background-color: #f8f8f8;
+}
+
+.tab{
+	width: 100%;
+	height: 68rpx;
+	line-height: 68rpx;
+	background-color: #f8f8f8;
+	color: #a9a9a9;
+	font-size: 14px;
+	padding-left: 3.75%; 
+	border-bottom: 1px solid #e3e3e3;
+}
+
+.input_address{
+	height: 114rpx;
+	line-height: 114rpx;
+}
+
+.location{
+	width: 19.68755%;
+    height: 64rpx;
+    line-height: 64rpx;
+    background-color: #3388f3;
+    border-radius: 7px;
+    border: 0.5px solid #0a69e2;
+    color: #fff;
+    text-align: center;
+    font-size: 14px;
+    margin-left: 76.5625%;
+    margin-top: -94rpx;
+    z-index: 1000;
+    position: absolute;
+}
+
+input{
+	width: 100%;
+	height: 78rpx;
+	line-height: 78rpx;
+	background-color: #fff;
+	color: #000;
+	font-size: 14px;
+	padding-left: 3.75%;
+	border: none;
+	border-bottom: 1px solid #e3e3e3;
+}
+
+textarea{
+  width: 100%;
+  height: 234rpx;
+	line-height: 78rpx;
+	background-color: #fff;
+	color: #000;
+	font-size: 14px;
+	padding-left: 3.75%;
+  padding-right: 3.75%;
+	border: none;
+	border-bottom: 1px solid #e3e3e3;
+}
+
+label{
+  width: 98%;
+	height: 90rpx;
+	line-height: 90rpx;
+	background-color: #fff;
+  margin-left: 2%;
+	color: #000;
+	font-size: 14px;
+	padding-left: 3.75%;
+	border: none;
+	border-bottom: 1px solid #e3e3e3;
+}
+
+.add{
+	float: left;
+	/* width: 22.5%; */
+  width: 19.5%;
+	height:148rpx;
+	margin-top: 14rpx;
+	margin-left: 2.5%;
+	 background-image: url(https://mirror.playingfootball.com.cn/uploadfiles/lms/68/201704/add.png);
+	background-repeat: no-repeat;
+	background-size: contain; 
+}
+
+.input_top_img{
+  display: none;
+	float: left;
+	width: 22.5%;
+	height:148rpx;
+	opacity: 0;
+	margin-top: -160rpx;
+	margin-left: 2.5%;
+}
+
+.show_img{
+	width:  100%;
+	height:172rpx;
+	border-bottom: 2px solid #e3e3e3;
+}
+
+.preview_in{
+	 width: 94.375%; 
+	 height:242rpx; 
+  /* width: 19.5%;
+  height: 148rpx; */
+	margin-left: 2.8%;
+	margin-top: 14rpx; 
+}
+
+.hide{
+  display: none
+}
+
+.delete{
+	/* width: 94.375%; */
+  width: 19.5%;
+	height: 34rpx;
+	line-height: 34rpx;
+	margin: 0 auto;
+	margin-top: 14rpx;
+  font-size: 14px;
+	text-align: center;
+	border: 1px solid #ebebeb;
+	background-color: #f8f8f8;
+}
+
+.submit_box{
+  width: 100%;
+  height: 174rpx;
+  background-color: #f8f8f8;
+}
+
+.publish{
+	 width: 89.0625%;
+    height: 82rpx;
+    line-height: 82rpx;
+    margin: 0 auto;
+    margin-top: 34rpx;
+    background-color: #028cf2;
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid #1165d6;
+}
+
+.picker{
+  width: 100%;
+  height: 78rpx;
+  line-height: 78rpx;
+  color: #000;
+  font-size: 14px;
+  font-weight: 400;
+}
+
+.cover{
+  position: absolute;
+  width: 100%;
+  height: 1200rpx;
+  /* background-color: #808080;
+  opacity: 0.7; */
+  z-index: 10000;
+  margin-top: -1200rpx;
+}
+
+.img_cover{
+  width:30%;
+  height:250rpx;
+  margin:0 auto;
+  margin-top:400rpx;
+  margin-left:33%;
+  background-color: #808080;
+  opacity: 0.7;
+}
+
+.bottom{
+  display: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 88rpx;
+  line-height: 88rpx;
+  background-color: #f9fafd;
+  font-size: 14px;
+}
+
+.bottom_item{
+    float: left;
+    width: 42%;
+    height: 82rpx;
+    line-height: 82rpx;
+    margin: 0 auto;
+    margin-top: 34rpx;
+    background-color: #028cf2;
+    color: #fff;
+    font-size: 16px;
+    text-align: center;
+    border-radius: 5px;
+    border: 1px solid #1165d6;
+    margin-left: 4%;
+}
+
+.bottom_item:first-child{
+  background-color: #f8f8f8;
+  color: #000;
+}

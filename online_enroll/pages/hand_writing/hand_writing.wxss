@@ -1,0 +1,44 @@
+/* pages/hand_writing/hand_writing.wxss */
+.writing_area{
+  width: 100%;
+  height: 1065rpx;
+}
+
+.bottom{
+  width: 100%;
+  height: 120rpx;
+  background-color: #e8e8e8;
+}
+
+.left{
+  float: left;
+  width: 39.6875%;
+  height: 120rpx;
+  line-height: 120rpx;
+  margin-left: 9.375%;
+  font-size: 14px; 
+}
+
+.button{
+  float: left;
+  width: 19.6875%;
+  height: 66rpx;
+  line-height: 66rpx;
+  border-radius: 3px;
+  margin-top: 29rpx;
+  text-align: center;
+  font-size: 14px;
+}
+
+.clear{
+  margin-left: 2.8125%;
+  border: 1px solid #dcdcdc;
+  background-color: #fff;
+}
+
+.save{
+  margin-left: 4.0625%;
+  background-color: #3588f7;
+  border: 1px solid #0e6fef;
+  color: #fff;
+}

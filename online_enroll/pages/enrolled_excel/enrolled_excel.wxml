@@ -1,0 +1,80 @@
+<!--pages/enrolled_excel/enrolled_excel.wxml-->
+<!--模态层  -->
+<view class="cover" bindtap='quit_cover' style='display:{{isShow}}'></view>
+<view class="cover_item_box" style='display:{{isShow}}'>
+        <view class="cover_item" bindtap='delete_enroll'>删除本条记录</view>
+        <view class="cover_item" bindtap='sign_in'>{{modal_sign_word}}</view>
+</view>
+<view class='container'>
+    <!-- 点击看图显示图片 -->
+    <view class="class='show_img'"  style="display:{{is_show_img==true?'':'none'}}">
+         <image  bindtap='quit_show' src='{{img_src}}' style='width:100%;' mode='aspectFit'></image>
+    </view>
+   
+    <scroll-view scroll-x class='table'>
+
+      <!--标题  -->
+      <view class='tr'>
+        <view class="item num th" wx:for="{{enroll_need_title}}">
+          <view class="title">{{item}}</view>     
+        </view>
+      </view>
+
+      <!-- 数据 -->
+       <view class='tr' wx:for="{{info_array}}" wx:for-index="index" data-id="{{item.id}}"  data-index="{{index}}" bindlongtap='show_module'>
+        <view class="item num td">
+           <view class="value" >{{index+1}}</view>
+        </view>
+
+      <!-- 手写签名模板 -->
+      <template name="hand_writing">
+        <view class="item td">
+            <view class="value" bindtap='show_img' data-current="{{index_data}}" data-num="{{index}}">点击看图</view>
+        </view>
+      </template>
+
+       <!-- 照片模板 -->
+      <template name="image">
+        <view class="item td">
+            <view class="value" bindtap='show_img' data-current="{{index_data}}" data-num="{{index}}">点击看图</view>
+        </view>
+      </template>
+
+       <!-- 普通模板 -->
+      <template name="normal">
+        <view class="item td">
+            <view class="value">{{items[1]}}</view>
+        </view>
+      </template>
+
+          
+        <block wx:for="{{item['value']}}"  wx:for-item="items" wx:for-index="index_data"> 
+          
+          <template wx:if="{{items[2]=='hand_writing'}}" is="hand_writing" data="{{items , index , index_data}}"/>
+          <template wx:if="{{items[2]=='image'}}" is="image" data="{{items , index , index_data}}"/>
+          <template wx:if="{{items[2]=='normal'}}" is="normal" data="{{items}}"/>
+          
+          
+        </block>
+      </view>
+  </scroll-view>
+
+  <view class='no_more_data_box'>
+    <view class="left">-------</view>
+    <view class="word">没有更多数据</view>
+    <view class='right'>-------</view>
+  </view>
+
+  <!-- <view class="tip">
+    点击表格的数据行，可以添加不同的标记，比如区分某个报名者是否已付款
+  </view> -->
+</view>
+
+<view class="bottom">
+    <view class="bottom_item">导出名单</view>
+    <view class="bottom_item">短信通知</view>
+    <view class="bottom_item">隐私设置</view>
+    <view class="bottom_item">分组详情</view>
+</view>
+
+

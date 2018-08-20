@@ -1,0 +1,75 @@
+/* pages/personal_center/personal_center.wxss */
+.container{
+  font-size: 14px;
+  height: 1066rpx;
+  width: 100%;
+  background-color: #f8f8f8;
+}
+
+.info{
+  width: 100%;
+  height: 300rpx;
+  background-color: #f8f8f8;
+}
+
+.avatar{
+ display: block;
+ overflow: hidden;
+  width: 18%;
+  height: 132rpx;
+  margin-left: 40%;
+  padding-top:58rpx;
+  border-radius: 100px;
+}
+
+.name{
+  width: 100%;
+  height: 50rpx;
+  color: #3388f3;
+  text-align: center;
+  font-size: 18px;
+  margin-left: 40%;
+}
+
+.item{
+  width: 100%;
+  height: 90rpx;
+  background-color: #fff;
+  border-bottom: 1px solid #e5e5e5;
+  border-top: 1px solid #e5e5e5;
+}
+
+.left{
+  float: left;
+  width: 90%;
+   height: 90rpx;
+   padding-left: 3%;
+   line-height: 90rpx;
+   font-size: 16px;
+}
+
+.right{
+   float: left;
+   width: 5%;
+   height: 90rpx;
+   line-height: 90rpx;
+   font-size: 20px;
+   text-align: right;
+   color: c8c8c8;
+}
+
+
+.cover{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background-color: #000000;
+  opacity: 1;
+  z-index: 10000;
+}
+
+.code{
+  width: 100%;
+  height: 70%;
+  margin-top: 15%;
+}

@@ -1,0 +1,657 @@
+body{
+	font-family: 'MingLiU';
+}
+
+.container{
+  width: 100%;
+}
+
+textarea{
+  height: 0;
+}
+
+button{
+  /* position:fixed; */
+  /* display:block; 
+  margin-left:auto;
+  margin-right:auto;
+  padding-left:0;
+  padding-right:0;
+  font-size:14px;
+  text-align:center;
+  text-decoration:none;
+  line-height:88rpx;
+  border-radius:0;
+  overflow:hidden;
+  color:#73acf9;
+  background-color:#f9fafd; */
+
+  width:100%;
+  height:86rpx;
+  line-height:86rpx;
+  background-color:#fff;
+  padding-left:5.9375%;
+  border-bottom:1px solid #f4f4f4;
+  font-size:14px;
+
+}
+
+
+button[class="bottom_item"]::after {
+  border: 0;
+} 
+
+.content{
+	width: 91.25%;
+	margin: 0 auto;
+	margin-top: 26rpx;
+}
+
+.hide{
+  display: none;
+}
+
+.top_img{
+  width: 100%;
+  /* height: 240rpx; */
+}
+
+.up_title{
+  width: 100%;
+  height: 76rpx;
+  line-height: 76rpx;
+  font-size: 14px;
+  color: #a6a6a6;
+  padding-left: 4.6875%;
+  border-bottom: 1px solid #efefef;
+}
+
+.image_in{
+  width: 100%;
+  height: 100%;
+ border-radius:5px;
+}
+
+.title_box{
+	width: 100%;
+	height: 46rpx;
+}
+
+.state{
+	float: left;
+	width: 16%;
+	height: 52rpx;
+  line-height: 52rpx;
+  color: #fff;
+  font-size: 12px;
+  text-align: center;
+}
+
+
+.name{
+	float: left;
+	width: 60%;
+	height: 46rpx;
+	line-height: 46rpx;
+	font-size: 14px;
+	margin-left: 2.05%;
+}
+
+.add_attention{
+	  float: left;
+    width: 11%;
+    height: 46rpx;
+    line-height: 46rpx;
+    color: #689ee1;
+    font-size: 14px;
+    margin-left: 3%;
+}
+
+.already_attention{
+    float: left;
+    width: 20%;
+    height: 46rpx;
+    line-height: 46rpx;
+    color: #689ee1;
+    font-size: 14px;
+}
+
+.type{
+	width: 100%;
+	height: 36rpx;
+	line-height: 36rpx;
+	font-size: 14px;
+	margin-top: 54rpx;
+}
+
+.address_box , .enroll_time_box , .avtivity_time_box{
+	width: 100%;
+	height: 76rpx;
+  line-height: 38rpx;
+	margin-top: 54rpx;
+	font-size: 14px;
+}
+
+.address_box{
+	display: inline-block;
+	height: 76rpx;
+}
+
+.icon{
+	float: left;
+	width: 5.82%;
+	height: 38rpx;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.tab{
+	float: left;
+	width:22%;
+	height: 34rpx;
+	line-height: 34rpx;
+	margin-left: 2.74%; 
+}
+
+.icon_address{
+	background-image: url(https://mirror.playingfootball.com.cn/uploadfiles//lms/68/201704/address.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.icon_enroll_time{
+	background-image: url(https://mirror.playingfootball.com.cn/uploadfiles//lms/68/201704/enroll_time.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.icon_avtivity_time{
+	background-image: url(https://mirror.playingfootball.com.cn/uploadfiles//lms/68/201704/activity_time.png);
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+
+.address{
+	float: left;
+	width: 89.38%;
+	height: 100%;
+	color: #6a7e98;
+	margin-left: 2.74%;
+}
+
+.enroll_time , .avtivity_time{
+	float: left;
+	width: 68.5%;
+	height: 34rpx;
+	margin-left: 0.9%;
+  color: #919191;
+}
+
+.data{
+	width: 100%;
+	height: 34rpx;
+	line-height: 34rpx;
+	color: #919191;
+	font-size: 14px;
+	margin-top: 40rpx;
+}
+
+.attention , .read{
+	float: left;
+	width: 28%;
+	height: 34rpx;
+}
+
+.read , .max_enroll{
+	margin-left: 3%;
+}
+
+.max_enroll{
+	float: left;
+	width: 35%;
+	height: 34rpx;
+}
+
+.data_tab{
+	float: left;
+	width: 40%;
+}
+
+.data_max_enroll{
+	float: left;
+	width: 55%;
+}
+
+.num{
+	float: left;
+	width: 55%;
+	margin-left: 5%;
+}
+
+.num_max_enroll{
+	float: left;
+	width: 40%;
+	margin-left: 5%;
+}
+
+.come_from{
+	width: 100%;
+	height: 34rpx;
+	line-height: 34rpx;
+	color: #919191;
+	font-size: 14px;
+	margin-top: 20rpx;
+  margin-bottom: 40rpx;
+}
+
+.come_from_tab{
+	float: left;
+	width: 12%;
+}
+
+.come_from_right{
+	float: left;
+	width: 85%;
+	margin-left: 2%;
+}
+
+.discribtion{
+  width: 100%;
+  /* height: 212rpx; */
+  border-bottom: 1px solid #ebebeb;
+  border-top: 1px solid #ebebeb;
+}
+
+.discribtion_tab{
+  width: 100%;
+  height: 76rpx;
+  line-height: 76rpx;
+  color: #a6a6a6;
+  font-size: 14px;
+   border-bottom: 1px solid #efefef; 
+   padding-left: 4.6875%;
+}
+
+.cut{
+  width: 108.75%;
+  height: 18rpx;
+  background-color: #f8f8f8;
+  border-bottom: 1px solid #efefef;
+  border-top: 1px solid #efefef;
+  margin-left: -4.375%;
+  margin-right: -4.375%;
+}
+
+.discribtion_content{
+  width: 91.25%;
+  height: 134rpx;
+  line-height: 64rpx;
+  padding-left: 4.6875%;
+  padding-right: 4.6875%;
+  font-size: 14px;
+}
+
+.enroll_table{
+	width: 100%;
+	height: 80rpx;
+	line-height: 80rpx;
+	/* margin-top: 40rpx; */
+	border-top: 1px solid #eaeaea;
+	border-bottom: 1px solid #eaeaea;
+}
+
+.enroll_table_tab{
+	float: left;
+	width: 21.917%;
+	font-size: 14px;
+  padding-left: 4.6875%;
+}
+
+.enroll_num{
+	float: left;
+	width: 8.56%;
+	color: #919191;
+	font-size: 14px; 
+	text-align: right;
+	margin-left: 35%;
+}
+
+.word{
+	float: left;
+	width: 20%;
+	color: #919191;
+	font-size: 14px; 
+}
+
+.link{
+	float: left;
+	width: 8.56%;
+	color: #919191;
+	font-size: 22px; 
+  text-align: center;
+}
+
+.comments{
+	width: 100%;
+	height: 48rpx;
+	line-height: 48rpx;
+	margin-top: 24rpx;
+	color: #919191;
+	font-size: 14px;
+}
+
+.comments_num , .comments_tab{
+	float: left;
+	width: 10%;
+	text-align: center;
+}
+
+.comments_tab{
+  padding-left: 4.6875%;
+}
+
+.no_more_data{
+	width: 100%;
+	height: 30rpx;
+	line-height: 30rpx;
+	color: #919191;
+	text-align: center;
+	font-size: 14px;
+	margin-top: 48rpx;
+  margin-bottom: 48rpx;
+}
+/* 
+.bottom{
+	position:absolute;
+	width: 100%;
+	height: 86rpx;
+	line-height: 86rpx;	
+	left:0rpx;
+	font-size: 14px;
+	text-align: center;
+	color: #fff;
+	background-color: #1a73cd;
+}
+
+.bottom_item{
+	width: 100%;
+	height:100%;	
+} */
+
+
+.bottom{
+  display: fixed;
+  bottom: 0;
+  width: 100%;
+  height: 88rpx;
+  line-height: 88rpx;
+  background-color: #f9fafd;
+  font-size: 14px;
+}
+
+.bottom_item{
+  float: left;
+  width: 24%;
+  color: #73acf9;
+  border-right: 1px solid #ebebec;
+  text-align: center;
+}
+
+.bottom_item:last-child{
+  border: none;
+}
+
+
+.comments_box{
+  width: 100%;
+  height: 220rpx;
+  margin-top: 20rpx;
+  font-size: 14px;
+}
+
+.comments_avatar{
+  float: left;
+  width: 9.375%;
+  height: 60rpx;
+  border-radius: 10px;
+  margin-left: 4.0625%;
+
+}
+
+.comments_right
+{
+  float: left;
+  width: 80.9875%;
+  margin-left: 5.3125%;
+  height: 220rpx;
+}
+
+.add_comment{
+ float:left;
+  width:20%;
+  height:48rpx;
+  line-height:48rpx;
+  color:#028cf2;
+  font-size:14px;
+  text-align:center;
+  border-radius:3px;
+  margin-left:50%;
+
+}
+
+.identity_info{
+  width: 100%;
+  height: 58rpx;
+  line-height: 58rpx;
+  color: #858585;
+}
+
+.comments_name , .special_identity{
+  float: left;
+}
+
+.comments_content{
+  width: 100%;
+  min-height: 52rpx;
+  max-height: 404.44rpx;
+}
+
+.comments_time{
+  width: 100%;
+  height: 52rpx;
+  line-height: 52rpx;
+  color: #858585;
+}
+
+
+.cover{
+  position: absolute;
+  width: 100%;
+  height: 1200rpx;
+  background-color: #808080;
+  opacity: 0.7;
+  z-index: 10000;
+  margin-top:-1180rpx;
+
+}
+
+.cover_item_box{
+  position: absolute;
+  margin-top: -750rpx;
+  width: 77.8125%;
+  height: 172rpx;
+  margin-left: 11.09375%;
+  background-color: #fff;
+  text-align: left;
+  z-index: 100000;
+  opacity: 1;
+}
+
+.cover_item{
+  width:100%;
+  height: 86rpx;
+  line-height: 86rpx;
+  background-color: #fff;
+  /* padding-left: 5.9375%; */
+  border-bottom: 1px solid #f4f4f4;
+  font-size: 14px;
+  text-align: center;
+}
+
+
+.covear{
+  position: absolute;
+  width: 100%;
+  height: 1300rpx;
+  background-color: #808080;
+  opacity: 0.7;
+  z-index: 10000;
+}
+
+.cover_item_boxa{
+  position: absolute;
+  margin-top: -750rpx;
+  width: 77.8125%;
+  height: 172rpx;
+  margin-left: 11.09375%;
+  background-color: #fff;
+  text-align: left;
+  z-index: 100000;
+  opacity: 1;
+}
+
+
+.cover_itema{
+ width:50%;
+height:86rpx;
+line-height:86rpx;
+background-color:#028cf2;
+color:#fff;
+padding-left:5.9375%;
+border-bottom:1px solid #028cf2;
+font-size:16px;
+margin-top:60%;
+}
+
+
+.delete_comment{
+  width: 100%;
+  height: 40rpx;
+  line-height: 40rpx;
+  color: #028cf2;
+  font-size: 12px;
+}
+
+
+.show_img{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 10000;
+  background-color: #000;
+  margin-top:-1180rpx;
+}
+
+.img_code{
+  margin-top: 300rpx;
+}
+
+.save_button{
+  position:absolute;
+margin-top:-650rpx;
+width:40%;
+height:80rpx;
+margin-left:30%;
+background-color:#fff;
+text-align:center;
+z-index:100000;
+opacity:1;
+line-height:79rpx;
+border:2px solid #000;
+
+
+}
+
+
+
+
+/*带有活动信息的二维码  */
+.info_code_bkg{
+  width: 100%;
+  height: 750rpx;
+  background-image: url(https://mirror.playingfootball.com.cn/uploadfiles//lms/68/201704/info_code_bkg.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  /* margin-top: 220rpx; */
+}
+
+.info_code_title{
+   width: 100%;
+   height:120rpx;
+   line-height: 120rpx;
+   font-size: 42rpx;
+   color: #FFF;
+   text-align: center;  
+}
+
+.info_code_content{
+  width: 70%;
+  height: 520rpx;
+  margin: 0 auto;
+   border: 3px solid #000; 
+  background-color: #fff;
+}
+
+.img_info_code{
+  width: 100%;
+  height: 380rpx;
+}
+
+.code_info_time{
+  width:100%;
+  height:40rpx;
+  line-height:40rpx;
+  color:#a6a6a6;
+  font-size:25rpx;
+  text-align:center;
+}
+
+.info_code_bottom{
+  width: 100%;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  color: #FFF;
+  font: 42rpx;
+}
+
+ /* canvas{
+  width: 100%;
+  height: 750rpx;
+  margin-top: 220rpx;
+}  */
+
+canvas{
+  width: 0;
+  height: 0;
+  margin-top:220rpx;
+} 
+
+
+.cover_pic{
+   position: absolute;
+  width: 100%;
+  height: 1200rpx;
+  background-color: #808080;
+   opacity: 0.6; 
+  z-index: 10000;
+  margin-top:-975rpx;
+}
+
+.canvas_pic{
+  position: absolute;
+  z-index: 1000000;
+  margin: 0 auto;
+  margin-top: -753rpx;
+ 
+}

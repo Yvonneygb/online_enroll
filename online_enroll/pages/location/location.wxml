@@ -1,0 +1,36 @@
+<!-- 搜索框 -->
+<view class="fixed">
+  <view class='page_row' bindtap="suo">  
+        <view class="search">  
+          <view class="df search_arr">  
+            <icon class="searchcion" size='15' type='search'></icon>  
+            <input class="" placeholder="请输入关键字" value="{{searchValue}}" bindinput='search_content'/>  
+          </view>  
+        </view>  
+        <view class='sousuo' bindtap='search'>搜索</view>  
+  </view>  
+
+
+  <block wx:for="{{search_result}}" wx:index="index">
+    <cover-view class="result_item" data-current="{{index}}" bindtap='choose_address'>{{item.title}}</cover-view>
+  </block>
+
+
+
+  <map id="map"style='width:100%;height:496rpx;' longitude="{{longitude}}" latitude="{{latitude}}" scale="17" controls="{{controls}}" bindcontroltap="controltap" markers="{{markers}}" bindmarkertap="markertap" polyline="{{polyline}}" bindregionchange="regionchange" show-location >
+    <cover-view class='complete' bindtap='complete'>完成</cover-view>
+  </map>
+
+</view>
+
+<view class='aa'>
+  <view wx:for="{{arr}}">
+      <view class="ul {{index==0?'first':''}}" bindtap='set_choose' data-current='{{index}}'>
+        <view class="left">
+          <view class="name">{{item.name}}</view>
+          <view class='address'>{{item.address}}</view>
+        </view>       
+          <view class="{{item.choose?'choose_address':''}}"></view>
+      </view>
+  </view> 
+</view>

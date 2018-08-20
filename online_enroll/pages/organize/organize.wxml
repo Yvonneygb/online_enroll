@@ -1,0 +1,2 @@
+<!--pages/organize/organize.wxml-->
+  <view class="has_enroll">没有创建或加入组织</view> 

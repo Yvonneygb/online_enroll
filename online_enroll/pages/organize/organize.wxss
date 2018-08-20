@@ -1,0 +1,10 @@
+/* pages/organize/organize.wxss */
+.has_enroll{
+  width: 100%;
+  height: 82rpx;
+  line-height: 82rpx;
+  background-color: #ffffbf;
+  color: #be9761;
+  padding-left: 5%;
+  font-size: 14px;
+}

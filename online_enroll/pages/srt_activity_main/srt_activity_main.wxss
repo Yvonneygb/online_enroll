@@ -1,0 +1,233 @@
+/* pages/srt_activity_main/srt_activity_main.wxss */
+a{
+	width: 100%;
+	height: 100%;
+	text-decoration: none;
+	color: #028cf2;
+}
+
+.fix_box{
+  position: fixed;
+  width:100%;
+  background-color: #FFFFFF;
+  z-index: 1000;
+}
+
+.adv{
+	width: 100%;
+	height:180rpx;
+	background-image: url(https://mirror.playingfootball.com.cn/uploadfiles/lms/68/201704/srt_adv.png);
+	background-size: cover;
+	background-repeat: no-repeat;
+}
+
+.navigation_bar_main{
+	/*width: 91.875%;*/
+	width: 100%;
+	height: 84rpx;
+	line-height: 84rpx;
+	margin: 0 auto;
+	font-size: 14px;
+	background-color: #f7fbfe;
+}
+
+.item{
+	float: left;
+	width: 20%;
+	height: 100%;
+	margin-left: 4.5%;
+  text-align: center;
+}
+
+.choose{
+	  width: 100%;
+    height: 4rpx;
+    background-color: #0063e2;
+    margin-top: -2rpx;
+    /* margin-left: 6%; */
+}
+
+.activity{
+	width: 100%;
+	height: 700rpx;
+	background-color: #f8f8f8;
+  padding-top: 237rpx;
+}
+
+.activity_item{
+	width: 100%;
+	height:230rpx;
+	background-color: #fff;
+  border-bottom: 1px solid #f8f8f8;
+	/* margin-top:20rpx;  */
+}
+
+.activity_item:first-child{
+	margin-top: 0rpx;
+}
+
+.line_one , .line_two{
+	width: 100%;
+	height: 44rpx;
+	line-height: 44rpx;
+	padding-top: 45rpx;
+	margin-left: 4.375%;
+}
+
+.state{
+	float: left;
+	width: 16%;
+	height: 52rpx;
+  line-height: 52rpx;
+  color: #fff;
+  font-size: 12px;
+  text-align: center;
+}
+
+.name{
+	float: left;
+	width: 63%;
+	height: 46rpx;
+	line-height: 46rpx;
+	font-size: 14px;
+	margin-left: 2.05%;
+	color: #bfbfbf;
+}
+
+.tab , .date{
+	float: left;
+	width: 25%;
+	height: 100%;
+	color: #bfbfbf;
+	font-size: 14px;
+}
+
+.tab{
+  width: 22%;
+}
+.enroll_num{
+	margin-left: 4%
+}
+
+.enroll_already , .diagonal , .enroll_need{
+	float: left;
+	width: 10%;
+	height: 100%;
+	color: #bfbfbf;
+	font-size: 14px;
+	text-align: center;
+}
+
+.diagonal{
+	width: 2%;
+}
+
+.organize_activity{
+	width: 89.0625%;
+	height: 82rpx;
+	line-height: 82rpx;
+	margin: 0 auto;
+	margin-top: 26rpx;
+  margin-bottom:26rpx;
+	color: #028cf2;
+	font-size: 14px;
+	text-align: center;
+	border-radius: 10px;
+	border:1px solid #028cf2;
+}
+
+.bottom{
+	position:absolute;
+	width: 100%;
+	height: 96rpx;
+	line-height: 96rpx;	
+	bottom:0rpx;
+	left:0rpx;
+	font-size: 14px;
+	text-align: center;
+	color: #028cf2;
+	border-top: 2px solid #f0f0f0;
+}
+
+.bottom_item{
+	float: left;
+	width: 8.75%;
+	height:82rpx;
+	margin-left: 24.6875%;
+	margin-top: 6rpx;
+}
+
+.bottom_item:first-child{
+	margin-left: 12.5%;
+}
+.icon{
+	width: 100%;
+	height: 56rpx;
+	background-size: contain;
+	background-repeat: no-repeat;
+}
+.icon_activity{
+	 background-image: url(https://mirror.playingfootball.com.cn/uploadfiles/lms/68/201704/activity.png); 
+}
+
+.icon_organize{
+	 background-image: url(https://mirror.playingfootball.com.cn/uploadfiles/lms/68/201704/organize.png); 
+}
+
+.icon_me{
+	 background-image: url(https://mirror.playingfootball.com.cn/uploadfiles/lms/68/201704/me.png); 
+}
+
+.word{
+	width: 100%;
+	height: 28rpx;
+	line-height: 28rpx;
+	font-size: 12px;
+	color: #028cf2;
+	text-align: center;
+}
+
+.image_in{
+  width: 100%;
+  height: 100%;
+  border-radius:5px;
+
+}
+
+.hide{
+  display: none;
+}
+
+.cover{
+  position: absolute;
+  width: 100%;
+  height: 1300rpx;
+  background-color: #808080;
+  opacity: 0.7;
+  z-index: 10000;
+}
+
+.cover_item_box{
+  position: absolute;
+  margin-top: -750rpx;
+  width: 77.8125%;
+  height: 172rpx;
+  margin-left: 11.09375%;
+  background-color: #fff;
+  text-align: left;
+  z-index: 100000;
+  opacity: 1;
+}
+
+
+.cover_item{
+ width:50%;
+height:86rpx;
+line-height:86rpx;
+background-color:#028cf2;
+color:#fff;
+padding-left:5.9375%;
+border-bottom:1px solid #028cf2;
+font-size:16px;
+margin-top:60%;
+}

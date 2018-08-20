@@ -1,0 +1,21 @@
+<!--pages/custom_item/custom_item.wxml-->
+<view class="container">
+  <form bindsubmit="formSubmit">
+      <view class="tab">数据名称</view>
+      <input name="name" placeholder="" class="input_title"></input>
+
+      <view class="tab">数据类型</view>
+      <picker name="type"  bindchange="bindChooseType" value="{{typeIndex}}" range="{{typeArray}}">
+          <view>
+              <text class="selectd">{{typeArray[typeIndex]}}</text>
+              <text class="type_icon">></text>
+          </view>
+      </picker>
+      <view class="tip" data-index="{{typeIndex}}" bindtap='showTip'>{{tipArray[tipIndex]}}</view>
+
+      <view class="tab" style="display:{{isShow}}" >选项列表</view>
+      <textarea bindinput="bindinput" auto-height  placeholder='每行一个，最后一个不要换行'  style="display:{{isShow}}" ></textarea>
+
+      <button class="add" form-type="submit">添加</button>
+  </form>
+</view> 
